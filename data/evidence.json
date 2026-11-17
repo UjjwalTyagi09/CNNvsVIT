@@ -1,0 +1,361 @@
+{
+  "evidence": {
+    "resnet50_cifar10_timm": {
+      "model_id": "resnet50_cifar10_timm",
+      "display_name": "ResNet-50 (CIFAR-10)",
+      "architecture_family": "CNN",
+      "protocol_id": "cifar10_pretrained_transfer_cifar10c",
+      "clean_metrics": {
+        "top1_accuracy": 95.31,
+        "top5_accuracy": 99.82,
+        "mean_softmax_confidence": 0.941
+      },
+      "robustness_summary": {
+        "mean_corrupted_top1": 74.24,
+        "mean_corruption_drop": 21.07,
+        "mean_confidence_corrupted": 0.812,
+        "accuracy_by_severity": {
+          "1": 89.12,
+          "2": 81.54,
+          "3": 73.80,
+          "4": 67.21,
+          "5": 59.53
+        },
+        "accuracy_by_category": {
+          "noise": 65.42,
+          "blur": 71.84,
+          "weather": 77.26,
+          "digital": 78.61
+        }
+      },
+      "per_corruption_sev3": {
+        "gaussian_noise": 63.20,
+        "shot_noise": 65.80,
+        "impulse_noise": 61.40,
+        "speckle_noise": 67.50,
+        "defocus_blur": 75.10,
+        "glass_blur": 62.90,
+        "motion_blur": 74.00,
+        "zoom_blur": 73.20,
+        "gaussian_blur": 74.80,
+        "snow": 75.40,
+        "frost": 73.10,
+        "fog": 82.30,
+        "brightness": 93.10,
+        "spatter": 81.10,
+        "contrast": 68.40,
+        "elastic_transform": 79.20,
+        "pixelate": 78.50,
+        "jpeg_compression": 81.30,
+        "saturate": 88.60
+      },
+      "efficiency": {
+        "parameters": 25557032,
+        "flops_g": 4.1,
+        "cpu_latency_ms": 18.2,
+        "gpu_latency_ms": 1.45,
+        "vram_mb": 420,
+        "throughput_img_per_sec": 690
+      },
+      "dataset_suitability": {
+        "min_recommended_samples": 5000,
+        "optimal_regime": "Medium-to-large fine-tuning dataset with standard augmentation",
+        "scratch_feasible": true,
+        "transfer_efficiency": 0.92
+      }
+    },
+    "vit_base_16_cifar10_hf": {
+      "model_id": "vit_base_16_cifar10_hf",
+      "display_name": "ViT-Base/16 (CIFAR-10)",
+      "architecture_family": "ViT",
+      "protocol_id": "cifar10_pretrained_transfer_cifar10c",
+      "clean_metrics": {
+        "top1_accuracy": 97.88,
+        "top5_accuracy": 99.94,
+        "mean_softmax_confidence": 0.968
+      },
+      "robustness_summary": {
+        "mean_corrupted_top1": 84.62,
+        "mean_corruption_drop": 13.26,
+        "mean_confidence_corrupted": 0.895,
+        "accuracy_by_severity": {
+          "1": 94.20,
+          "2": 89.81,
+          "3": 84.72,
+          "4": 79.54,
+          "5": 74.83
+        },
+        "accuracy_by_category": {
+          "noise": 81.50,
+          "blur": 83.82,
+          "weather": 86.40,
+          "digital": 87.32
+        }
+      },
+      "per_corruption_sev3": {
+        "gaussian_noise": 80.50,
+        "shot_noise": 82.10,
+        "impulse_noise": 81.00,
+        "speckle_noise": 82.40,
+        "defocus_blur": 85.30,
+        "glass_blur": 79.80,
+        "motion_blur": 84.20,
+        "zoom_blur": 84.70,
+        "gaussian_blur": 85.10,
+        "snow": 84.90,
+        "frost": 83.60,
+        "fog": 91.20,
+        "brightness": 96.50,
+        "spatter": 87.30,
+        "contrast": 82.10,
+        "elastic_transform": 88.40,
+        "pixelate": 89.20,
+        "jpeg_compression": 89.50,
+        "saturate": 93.80
+      },
+      "efficiency": {
+        "parameters": 86567656,
+        "flops_g": 17.6,
+        "cpu_latency_ms": 64.5,
+        "gpu_latency_ms": 3.82,
+        "vram_mb": 1150,
+        "throughput_img_per_sec": 262
+      },
+      "dataset_suitability": {
+        "min_recommended_samples": 20000,
+        "optimal_regime": "Large dataset with pretraining or extensive transfer data",
+        "scratch_feasible": false,
+        "transfer_efficiency": 0.98
+      }
+    },
+    "convnext_tiny_cifar10_timm": {
+      "model_id": "convnext_tiny_cifar10_timm",
+      "display_name": "ConvNeXt-Tiny (CIFAR-10)",
+      "architecture_family": "CNN",
+      "protocol_id": "cifar10_pretrained_transfer_cifar10c",
+      "clean_metrics": {
+        "top1_accuracy": 96.72,
+        "top5_accuracy": 99.89,
+        "mean_softmax_confidence": 0.952
+      },
+      "robustness_summary": {
+        "mean_corrupted_top1": 79.82,
+        "mean_corruption_drop": 16.90,
+        "mean_confidence_corrupted": 0.854,
+        "accuracy_by_severity": {
+          "1": 92.40,
+          "2": 86.72,
+          "3": 80.12,
+          "4": 73.61,
+          "5": 66.25
+        },
+        "accuracy_by_category": {
+          "noise": 74.55,
+          "blur": 78.62,
+          "weather": 82.94,
+          "digital": 84.02
+        }
+      },
+      "per_corruption_sev3": {
+        "gaussian_noise": 72.80,
+        "shot_noise": 75.20,
+        "impulse_noise": 74.30,
+        "speckle_noise": 75.90,
+        "defocus_blur": 80.70,
+        "glass_blur": 71.50,
+        "motion_blur": 79.80,
+        "zoom_blur": 80.60,
+        "gaussian_blur": 80.30,
+        "snow": 81.20,
+        "frost": 79.40,
+        "fog": 87.80,
+        "brightness": 95.20,
+        "spatter": 85.20,
+        "contrast": 76.30,
+        "elastic_transform": 84.60,
+        "pixelate": 85.10,
+        "jpeg_compression": 86.40,
+        "saturate": 91.50
+      },
+      "efficiency": {
+        "parameters": 28589128,
+        "flops_g": 4.5,
+        "cpu_latency_ms": 22.4,
+        "gpu_latency_ms": 1.72,
+        "vram_mb": 460,
+        "throughput_img_per_sec": 580
+      },
+      "dataset_suitability": {
+        "min_recommended_samples": 8000,
+        "optimal_regime": "Medium-to-large dataset; balances ViT-like attention receptive fields with CNN efficiency",
+        "scratch_feasible": true,
+        "transfer_efficiency": 0.95
+      }
+    },
+    "scratch_cnn_cifar100": {
+      "model_id": "scratch_cnn_cifar100",
+      "display_name": "Scratch Residual CNN (CIFAR-100)",
+      "architecture_family": "CNN",
+      "protocol_id": "cifar100_scratch_random_init",
+      "clean_metrics": {
+        "top1_accuracy": 60.96,
+        "top1_accuracy_std": 0.18,
+        "top5_accuracy": 86.42,
+        "expected_calibration_error": 0.142
+      },
+      "robustness_summary": {
+        "gaussian_noise_accuracy": 24.12,
+        "gaussian_noise_accuracy_std": 0.45,
+        "relative_noise_drop": 60.43,
+        "calibration_quality": "Fair / Overconfident on corruptions"
+      },
+      "per_corruption_sev3": {
+        "gaussian_noise": 24.12
+      },
+      "efficiency": {
+        "parameters": 959452,
+        "flops_g": 0.068,
+        "cpu_latency_ms": 4.2,
+        "gpu_latency_ms": 0.48,
+        "gpu_latency_batch64_ms": 1.84,
+        "vram_mb": 120,
+        "throughput_img_per_sec": 2080
+      },
+      "dataset_suitability": {
+        "min_recommended_samples": 1000,
+        "optimal_regime": "Resource-constrained or strictly from-scratch environments with small datasets",
+        "scratch_feasible": true,
+        "transfer_efficiency": 0.70
+      }
+    },
+    "scratch_vit_cifar100": {
+      "model_id": "scratch_vit_cifar100",
+      "display_name": "Scratch Compact ViT (CIFAR-100)",
+      "architecture_family": "ViT",
+      "protocol_id": "cifar100_scratch_random_init",
+      "clean_metrics": {
+        "top1_accuracy": 55.62,
+        "top1_accuracy_std": 0.37,
+        "top5_accuracy": 82.15,
+        "expected_calibration_error": 0.086
+      },
+      "robustness_summary": {
+        "gaussian_noise_accuracy": 29.85,
+        "gaussian_noise_accuracy_std": 0.32,
+        "relative_noise_drop": 46.33,
+        "calibration_quality": "High / Well calibrated probabilities"
+      },
+      "per_corruption_sev3": {
+        "gaussian_noise": 29.85
+      },
+      "efficiency": {
+        "parameters": 955236,
+        "flops_g": 0.0676,
+        "cpu_latency_ms": 9.8,
+        "gpu_latency_ms": 1.15,
+        "gpu_latency_batch64_ms": 4.12,
+        "vram_mb": 165,
+        "throughput_img_per_sec": 870
+      },
+      "dataset_suitability": {
+        "min_recommended_samples": 15000,
+        "optimal_regime": "When calibration and noise resilience matter more than peak clean accuracy on limited data",
+        "scratch_feasible": true,
+        "transfer_efficiency": 0.85
+      }
+    },
+    "mvitv2_tiny_in1k": {
+      "model_id": "mvitv2_tiny_in1k",
+      "display_name": "MViTv2-Tiny (ImageNet-1K)",
+      "architecture_family": "MViT",
+      "protocol_id": "imagenet1k_native_pretraining",
+      "clean_metrics": {
+        "top1_accuracy": 82.30,
+        "top5_accuracy": 96.10,
+        "mean_softmax_confidence": 0.880
+      },
+      "robustness_summary": {
+        "estimated_mce": 58.4,
+        "relative_robustness_profile": "Hierarchical multiscale pooling attention provides strong structural preservation against multiscale blur and texture noise.",
+        "note": "Official checkpoint evaluated on ImageNet-1K; corruption figures derived from published MViT multiscale attention robustness literature."
+      },
+      "per_corruption_sev3": {},
+      "efficiency": {
+        "parameters": 24000000,
+        "flops_g": 4.7,
+        "cpu_latency_ms": 28.5,
+        "gpu_latency_ms": 1.90,
+        "vram_mb": 380,
+        "throughput_img_per_sec": 526
+      },
+      "dataset_suitability": {
+        "min_recommended_samples": 25000,
+        "optimal_regime": "High-resolution hierarchical vision tasks, dense prediction, or fine-tuning from ImageNet weights",
+        "scratch_feasible": false,
+        "transfer_efficiency": 0.96
+      }
+    },
+    "mvitv2_small_in1k": {
+      "model_id": "mvitv2_small_in1k",
+      "display_name": "MViTv2-Small (ImageNet-1K)",
+      "architecture_family": "MViT",
+      "protocol_id": "imagenet1k_native_pretraining",
+      "clean_metrics": {
+        "top1_accuracy": 83.60,
+        "top5_accuracy": 96.70,
+        "mean_softmax_confidence": 0.895
+      },
+      "robustness_summary": {
+        "estimated_mce": 54.2,
+        "relative_robustness_profile": "Increased channel depth improves shape bias over local texture.",
+        "note": "Official checkpoint evaluated on ImageNet-1K."
+      },
+      "per_corruption_sev3": {},
+      "efficiency": {
+        "parameters": 35000000,
+        "flops_g": 7.0,
+        "cpu_latency_ms": 42.0,
+        "gpu_latency_ms": 2.75,
+        "vram_mb": 520,
+        "throughput_img_per_sec": 363
+      },
+      "dataset_suitability": {
+        "min_recommended_samples": 50000,
+        "optimal_regime": "Large dataset classification or backbone for detection/segmentation",
+        "scratch_feasible": false,
+        "transfer_efficiency": 0.97
+      }
+    },
+    "mvitv2_base_in1k": {
+      "model_id": "mvitv2_base_in1k",
+      "display_name": "MViTv2-Base (ImageNet-1K)",
+      "architecture_family": "MViT",
+      "protocol_id": "imagenet1k_native_pretraining",
+      "clean_metrics": {
+        "top1_accuracy": 84.40,
+        "top5_accuracy": 97.10,
+        "mean_softmax_confidence": 0.912
+      },
+      "robustness_summary": {
+        "estimated_mce": 51.8,
+        "relative_robustness_profile": "Highest capacity multiscale model; superior global context aggregation.",
+        "note": "Official checkpoint evaluated on ImageNet-1K."
+      },
+      "per_corruption_sev3": {},
+      "efficiency": {
+        "parameters": 52000000,
+        "flops_g": 10.2,
+        "cpu_latency_ms": 68.0,
+        "gpu_latency_ms": 4.10,
+        "vram_mb": 780,
+        "throughput_img_per_sec": 244
+      },
+      "dataset_suitability": {
+        "min_recommended_samples": 100000,
+        "optimal_regime": "High-compute server deployment requiring maximum accuracy and scale",
+        "scratch_feasible": false,
+        "transfer_efficiency": 0.99
+      }
+    }
+  }
+}

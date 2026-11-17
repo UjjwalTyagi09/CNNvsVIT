@@ -1,0 +1,73 @@
+{
+  "sources": [
+    {
+      "source_id": "repo_cifar100_selector",
+      "name": "CNN vs ViT Model Selector",
+      "url": "https://github.com/ayo-aa/cnn-vs-vit-model-selector",
+      "authors": "Ayo-aa",
+      "license": "MIT",
+      "description": "Controlled CIFAR-100 benchmark comparing custom residual CNN and Vision Transformer under strictly matched parameter budgets (~960k parameters), measuring clean accuracy, ECE calibration, Gaussian noise degradation, and inference latency across multiple random seeds.",
+      "evidence_types": [
+        "scratch_training_benchmark",
+        "calibration_ece",
+        "noise_robustness",
+        "gpu_latency",
+        "multi_seed_variance"
+      ],
+      "dataset": "CIFAR-100",
+      "verified": true,
+      "date_accessed": "2026-10-19"
+    },
+    {
+      "source_id": "repo_cifar10c_robustness",
+      "name": "CIFAR-10-C Robustness Study",
+      "url": "https://github.com/seanzero7/Cifar10c-Robustness-Study",
+      "authors": "seanzero7",
+      "license": "Open Research / Not specified in repository (weights Apache-2.0 via timm/HuggingFace)",
+      "description": "Inference-only robustness evaluation across 19 corruptions and 5 severity levels on CIFAR-10-C comparing ResNet-50, ViT-Base/16, and ConvNeXt-Tiny.",
+      "evidence_types": [
+        "cifar10c_benchmark",
+        "19_corruption_breakdown",
+        "severity_curves",
+        "softmax_confidence",
+        "top1_top5_accuracy"
+      ],
+      "dataset": "CIFAR-10 / CIFAR-10-C",
+      "verified": true,
+      "date_accessed": "2026-10-19"
+    },
+    {
+      "source_id": "repo_facebook_mvit",
+      "name": "Official MViTv2 (Facebook Research)",
+      "url": "https://github.com/facebookresearch/mvit",
+      "authors": "Haoqi Fan, Yanghao Li, Bo Xiong, Wan-Yen Lo, Christoph Feichtenhofer (Meta AI)",
+      "license": "Apache-2.0",
+      "description": "Multiscale Vision Transformers v2 for Image Recognition and Video Classification (CVPR 2022). Pretrained checkpoints on ImageNet-1K with multiscale pooling attention mechanism.",
+      "evidence_types": [
+        "imagenet1k_top1_top5",
+        "parameter_counts",
+        "flop_counts",
+        "model_architecture_code"
+      ],
+      "dataset": "ImageNet-1K",
+      "verified": true,
+      "date_accessed": "2026-10-19"
+    },
+    {
+      "source_id": "repo_hendrycks_robustness",
+      "name": "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations",
+      "url": "https://github.com/hendrycks/robustness",
+      "authors": "Dan Hendrycks, Thomas Dietterich (ICLR 2019)",
+      "license": "Apache-2.0",
+      "description": "Foundational robustness benchmark defining the standardized 15 corruptions (and 4 extra) across noise, blur, weather, and digital distortions, establishing Mean Corruption Error (mCE) normalized to AlexNet baseline.",
+      "evidence_types": [
+        "corruption_taxonomy",
+        "mce_metric_standard",
+        "benchmark_leaderboard"
+      ],
+      "dataset": "ImageNet-C / CIFAR-10-C / CIFAR-100-C",
+      "verified": true,
+      "date_accessed": "2026-10-19"
+    }
+  ]
+}

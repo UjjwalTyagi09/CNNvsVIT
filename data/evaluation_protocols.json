@@ -1,0 +1,90 @@
+{
+  "protocols": [
+    {
+      "protocol_id": "cifar100_scratch_random_init",
+      "name": "CIFAR-100 Random Initialization Scratch Benchmark",
+      "dataset": "CIFAR-100",
+      "classes": 100,
+      "source_repository": "https://github.com/ayo-aa/cnn-vs-vit-model-selector",
+      "input_resolution": "32x32",
+      "training_regime": "From scratch (random initialization, 100 epochs, AdamW, Cosine Annealing)",
+      "num_seeds": 3,
+      "seeds": [42, 43, 44],
+      "metrics_measured": [
+        "clean_top1_accuracy_mean",
+        "clean_top1_accuracy_std",
+        "clean_top5_accuracy_mean",
+        "expected_calibration_error_ece",
+        "gaussian_noise_accuracy",
+        "gpu_latency_ms_per_batch",
+        "trainable_parameters",
+        "training_time_min"
+      ],
+      "hardware": "NVIDIA Tesla T4 GPU (Batch Size: 64)",
+      "controlled_variables": "Parameter count strictly matched at ~960,000 weights",
+      "valid_direct_comparisons": ["scratch_cnn_cifar100", "scratch_vit_cifar100"],
+      "incomparability_notes": "Cannot be directly compared on raw accuracy against pretrained models or models evaluated on CIFAR-10 (10 classes) or ImageNet-1K (1000 classes)."
+    },
+    {
+      "protocol_id": "cifar10_pretrained_transfer_cifar10c",
+      "name": "CIFAR-10-C Systematic Corruption Robustness Study",
+      "dataset": "CIFAR-10 / CIFAR-10-C",
+      "classes": 10,
+      "source_repository": "https://github.com/seanzero7/Cifar10c-Robustness-Study",
+      "input_resolution": "224x224 (CIFAR images interpolated from 32x32)",
+      "training_regime": "Pretrained on large source datasets (ImageNet-1K / ImageNet-21K), fine-tuned for CIFAR-10",
+      "corruptions_evaluated": 19,
+      "severity_levels": 5,
+      "total_corrupted_evaluations": 95,
+      "metrics_measured": [
+        "clean_top1_accuracy",
+        "clean_top5_accuracy",
+        "clean_mean_softmax_confidence",
+        "corrupted_top1_accuracy_by_severity",
+        "corrupted_top1_accuracy_by_corruption",
+        "mean_corruption_top1_accuracy",
+        "relative_robustness_drop_percentage",
+        "robustness_slope_across_severities"
+      ],
+      "hardware": "Apple Silicon (MPS) / CUDA / CPU",
+      "valid_direct_comparisons": ["resnet50_cifar10_timm", "vit_base_16_cifar10_hf", "convnext_tiny_cifar10_timm"],
+      "incomparability_notes": "Models share the exact same 19 corruptions and 5 severities with identical 224x224 resizing. Directly comparable to each other. Cannot be numerically equated with scratch CIFAR-100 models."
+    },
+    {
+      "protocol_id": "imagenet1k_native_pretraining",
+      "name": "ImageNet-1K Native Classification Benchmark",
+      "dataset": "ImageNet-1K (ILSVRC2012)",
+      "classes": 1000,
+      "source_repository": "https://github.com/facebookresearch/mvit",
+      "input_resolution": "224x224",
+      "training_regime": "Supervised training on full ImageNet-1K (1.28M images, 300 epochs)",
+      "metrics_measured": [
+        "clean_top1_accuracy",
+        "clean_top5_accuracy",
+        "parameters",
+        "gflops"
+      ],
+      "hardware": "Multi-GPU cluster (V100/A100)",
+      "valid_direct_comparisons": ["mvitv2_tiny_in1k", "mvitv2_small_in1k", "mvitv2_base_in1k"],
+      "incomparability_notes": "Evaluated on ImageNet-1K validation set (50,000 images, 1000 classes). Represents high-capacity representation learning. Corruption robustness on CIFAR-10-C was not directly run in this repository."
+    },
+    {
+      "protocol_id": "imagenet_c_robustness_benchmark",
+      "name": "Hendrycks ImageNet-C Corruption Benchmark",
+      "dataset": "ImageNet-C",
+      "classes": 1000,
+      "source_repository": "https://github.com/hendrycks/robustness",
+      "input_resolution": "224x224",
+      "corruptions_evaluated": 19,
+      "severity_levels": 5,
+      "baseline_model": "AlexNet",
+      "metrics_measured": [
+        "mean_corruption_error_mce",
+        "clean_error_rate",
+        "relative_mce"
+      ],
+      "valid_direct_comparisons": ["resnet50_standard", "resnet50_augmix", "resnet50_deepaugment"],
+      "incomparability_notes": "Uses AlexNet error normalization to calculate mCE. Directly informs the taxonomy and weighting of corruptions."
+    }
+  ]
+}
